@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  div.wrapper
+    div.content
+      div.page--1
+        div.page__heading--1
+          span.dates  21-27
+          span.month May 2012
+        div.page__body
+          div.diary
+            div.day
+              div.day__heading Day
+                div.day__body
+                each day in days
+                  div.body__day= day
+                  div.body__date= date()
+            div.time
+              div.time--heading Time
+                div.line
+                div.line
+                div.line
+                div.line
+            div.description
+              div.description--heading Description
+                div.line
+                div.line
+                div.line
+                div.line
+          div.circle
+
+
+
+

@@ -7,7 +7,8 @@ const date = require('../public/javascripts/getDate');
 router.get('/', function(req, res, next) {
   res.render('index', {
     days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-      date: date,
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      curDate: date(),
       msg: ' hello xxxxxxx'
   });
 });

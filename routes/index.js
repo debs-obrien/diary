@@ -5,35 +5,31 @@ const date = require('../public/javascripts/getDate');
 const axios = require("axios");
 
 
-const getUrl = () => {
-    try {
-        return axios.get('https://api.abalin.net/get/namedays?day=11&month=3')
-    } catch (error) {
-        console.error(error)
-    }
-};
+const getUrl = async () => {
+    return axios.get('https://api.abalin.net/get/namedays?day=11&month=5')
+}
 const getSaints = async () => {
-    getUrl()
-        .then(response => {
-            console.log(response.data.data.name_es);
-            return (response.data.data.name_es);
-        })
-        .catch(error => {
-            console.log(error)
-        })
-};
+    try {
+        // destructure returned object instead of calling data.data.name_es
+        let { data: { data: { name_es } } } = await getUrl();
+        return name_es;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    getSaints()
-        .then(res.render('index', {
-        days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        curDate: date(),
-        curSaints: getSaints()
-    }))
-
+    getSaints() // call then and pass function to then handler to pass result of getSaints() - call it saints as that makes sense
+        .then(function(saints) { res.render('index', {
+                days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
+                months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                curDate: date(),
+                saints
+            })
+        })
 });
 
 module.exports = router;

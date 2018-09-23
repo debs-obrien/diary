@@ -5,8 +5,8 @@ block content
     div.content
       div.page--1
         div.page__heading--1
-          span.dates  #{curDate[0].date} - #{curDate[6].date}
-          span.month #{months[curDate[0].months]} #{curDate[0].years}
+          span.dates  #{date[0].date} - #{date[6].date}
+          span.month #{months[date[0].months]} #{date[0].years}
         div.page__body
           div.diary
             div.day
@@ -14,7 +14,7 @@ block content
                 div.day__body
                 - for (var i = 0; i < 7; i++)
                   div.body__day= days[i]
-                  div.body__date= curDate[i].date
+                  div.body__date= date[i].date
             div.time
               div.time--heading Time
                 div.line

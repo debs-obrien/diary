@@ -1,33 +1,67 @@
 extends layout
 
 block content
-  div.wrapper
-    div.content
-      div.page--1
-        div.page__heading--1
-          span.dates  #{curDate[0].date} - #{curDate[6].date}
-          span.month #{months[curDate[0].months]} #{curDate[0].years}
-        div.page__body
-          div.diary
-            div.day
-              div.day__heading Day
-                div.day__body
-                - for (var i = 0; i < 7; i++)
-                  div.body__day= days[i]
-                  div.body__date= curDate[i].date
-            div.time
-              div.time--heading Time
-                div.line
-                div.line
-                div.line
-                div.line
-            div.description
-              div.description--heading Description
-                div.line= saints
-                div.line
-                div.line
-                div.line
-          div.circle
+  .wrapper
+    .page
+      .page__heading
+        span.dates  #{curDate[0].date}-#{curDate[6].date}
+        span.month #{months[curDate[0].months]} #{curDate[0].years}
+      .page__body
+        .diary
+          .diary__body
+            .heading-wrapper
+              .day__body.heading Date
+              .details__body.heading
+                .content
+                  .time Time
+                  .description Description
+              .circle-wrapper
+              .circle-wrapper
+              .details__body.heading
+                .content
+                  .task Task
+                  .done Done
+
+          .diary__body
+            - for (var i = 0; i < 7; i++)
+              .day-wrapper
+                .day__body
+                  .day__body--day= days[i]
+                  .day__body--date= curDate[i].date
+                .details__body
+                  .content
+                    .time test
+                    .description= saints
+                  .content
+                    .time
+                    .description
+                  .content
+                    .time test
+                    .description= saints
+                  .content
+                    .time
+                    .description
+
+                .circle-wrapper
+                  .circle
+                .circle-wrapper
+                  .circle
+                .details__body
+                  .content
+                    .task= saints
+                    .done test
+                  .content
+                    .task
+                    .done
+                  .content
+                    .task= saints
+                    .done test
+                  .content
+                    .task
+                    .done
+
+
+
 
 
 

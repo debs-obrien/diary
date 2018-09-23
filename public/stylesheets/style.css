@@ -5,4 +5,100 @@ body {
 a {
   color: #00B7FF; }
 
+.wrapper {
+  display: flex;
+  border: 14px solid #b9cde5; }
+
+.page {
+  width: 100%; }
+  .page__heading {
+    padding: 5px 10px 20px 20px;
+    display: flex; }
+    .page__heading .dates {
+      font-size: 30px;
+      margin-right: 30px; }
+    .page__heading .month {
+      justify-content: center;
+      align-self: flex-start;
+      font-size: 18px; }
+  .page__body {
+    display: flex;
+    padding: 14px; }
+
+.diary {
+  width: 100%; }
+
+.heading-wrapper {
+  display: flex; }
+  .heading-wrapper .heading {
+    background-color: lightgrey;
+    border-top: 1px solid grey; }
+
+.diary {
+  display: flex;
+  flex-direction: column; }
+  .diary__heading {
+    display: flex;
+    background-color: lightgrey;
+    text-align: center;
+    border: 1px solid grey; }
+  .diary .day, .diary .day__body {
+    width: 100px; }
+  .diary .content {
+    display: flex;
+    border-bottom: 1px solid grey; }
+    .diary .content:last-child {
+      border: none; }
+    .diary .content .time, .diary .content .done {
+      padding: 0 5px;
+      min-height: 15px;
+      width: 100%; }
+    .diary .content .time {
+      max-width: 60px;
+      border-right: 1px solid grey; }
+    .diary .content .done {
+      max-width: 40px;
+      border-left: 1px solid grey; }
+    .diary .content .description, .diary .content .task {
+      width: 100%; }
+  .diary .day__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 100%;
+    max-width: 100px; }
+    .diary .day__body--day {
+      font-size: 18px; }
+    .diary .day__body--date {
+      font-size: 28px; }
+  .diary .day-wrapper {
+    display: flex; }
+  .diary .details__body {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey; }
+  .diary .time__body {
+    display: flex;
+    flex-direction: column; }
+
+.circle-wrapper, .circle-heading {
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .circle-wrapper:nth-child(1n), .circle-heading:nth-child(1n) {
+    border-right: 2px solid grey; }
+  .circle-wrapper:nth-child(2n), .circle-heading:nth-child(2n) {
+    border-right: 1px solid grey; }
+  .circle-wrapper .circle, .circle-heading .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #b9cde5; }
+
 /*# sourceMappingURL=style.css.map */

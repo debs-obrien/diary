@@ -1,0 +1,145 @@
+$primary:#b9cde5;
+$border: grey;
+$heading: lightgrey;
+body{
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+}
+
+
+a{
+  color: #00B7FF
+}
+
+.wrapper{
+  display:flex;
+  border: 14px solid $primary;
+}
+
+.page{
+  width: 100%;
+  &__heading{
+    padding: 5px 10px 20px 20px;
+    display:flex;
+    .dates{
+      font-size:30px;
+      margin-right:30px;
+    }
+    .month{
+      justify-content: center;
+      align-self: flex-start;
+      font-size: 18px;
+    }
+  }
+  &__body{
+    display:flex;
+    padding:14px;
+  }
+}
+.diary{
+  width: 100%;
+}
+.heading-wrapper{
+  display:flex;
+  .heading{
+    background-color:$heading;
+    border-top:1px solid $border;
+  }
+}
+.diary{
+  display:flex;
+  flex-direction: column;
+  &__heading{
+    display: flex;
+    background-color: $heading;
+    text-align:center;
+    border:1px solid $border;
+  }
+  .day, .day__body{
+    width: 100px;
+
+  }
+
+  .content{
+    display:flex;
+    border-bottom: 1px solid $border;
+    &:last-child{
+      border:none;
+    }
+    .time, .done{
+      padding: 0 5px;
+      min-height:15px;
+      width: 100%;
+    }
+    .time{
+      max-width: 60px;
+      border-right:1px solid $border;
+    }
+    .done{
+      max-width: 40px;
+      border-left: 1px solid $border;
+    }
+    .description, .task{
+      width:100%;
+    }
+  }
+
+
+
+  .day{
+    &__body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $border;
+      border-bottom: 1px solid $border;
+      border-left: 1px solid $border;
+      border-right: 1px solid grey;
+      width: 100%;
+      max-width: 100px;
+
+      &--day{
+        font-size: 18px;
+      }
+      &--date{
+        font-size: 28px;
+      }
+    }
+    &-wrapper{
+      display: flex;
+    }
+  }
+.details__body{
+  width: 100%;
+  border-bottom: 1px solid $border;
+  border-right:1px solid $border;
+}
+
+
+  .time__body{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+// the page separators
+.circle-wrapper, .circle-heading{
+  min-width:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:nth-child(1n){
+    border-right: 2px solid $border;
+  }
+  &:nth-child(2n){
+    border-right: 1px solid $border;
+  }
+  .circle{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color:$primary;
+
+  }
+}

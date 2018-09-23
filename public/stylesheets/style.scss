@@ -63,9 +63,7 @@ a{
   .content{
     display:flex;
     border-bottom: 1px solid $border;
-    &:last-child{
-      border:none;
-    }
+    height: 19px;
     .time, .done{
       padding: 0 5px;
       min-height:15px;
@@ -93,7 +91,7 @@ a{
       justify-content: center;
       align-items: center;
       color: $border;
-      border-bottom: 1px solid $border;
+      border-bottom: 2px solid $border;
       border-left: 1px solid $border;
       border-right: 1px solid grey;
       width: 100%;

@@ -46,9 +46,8 @@ a {
     width: 100px; }
   .diary .content {
     display: flex;
-    border-bottom: 1px solid grey; }
-    .diary .content:last-child {
-      border: none; }
+    border-bottom: 1px solid grey;
+    height: 19px; }
     .diary .content .time, .diary .content .done {
       padding: 0 5px;
       min-height: 15px;
@@ -67,7 +66,7 @@ a {
     justify-content: center;
     align-items: center;
     color: grey;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid grey;
     border-left: 1px solid grey;
     border-right: 1px solid grey;
     width: 100%;

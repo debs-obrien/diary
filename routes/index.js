@@ -22,23 +22,17 @@ const todaysDate = function(){
 const getUrl = async () => {
         let day = 1;
         let month = 1;
-        let urls = axios.get(`https://api.abalin.net/get/namedays?day=${day}=&month=${month}`)
+        let urls = axios.get(`https://api.abalin.net/get/namedays?day=${day}=&month=${month}`);
         console.log(typeof urls); // object
         console.log(urls); // Promise{<pending>}
         return urls
 };
 
-const allUrls = []
-
 const getUrls = async () => {
     dates.map(date => {
         let day = date.date;
         let month = date.months;
-        let urls = axios.get(`https://api.abalin.net/get/namedays?day=${day}=&month=${month}`)
-        //console.log(typeof urls); // object
-        console.log(urls); // Promise{<pending>}
-        //allUrls.push(urls)
-        return urls
+        return axios.get(`https://api.abalin.net/get/namedays?day=${day}=&month=${month}`);
     });
 };
 const getSaints = async () => {

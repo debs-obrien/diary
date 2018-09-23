@@ -16,9 +16,11 @@ const getUrl = async () => {
 const getSaints = async () => {
     try {
         let results = await getUrl()
-        results.map(result => {
+
+        //console.log(results)
+        return results.map(result => {
             let { data: { data: { name_es } } } = result;
-            console.log(name_es); // prints all names perfectly
+            //console.log(name_es); // prints all names perfectly
             return name_es
         })
     }
@@ -30,14 +32,14 @@ const getSaints = async () => {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     getSaints()
-        .then(function(name_es){
-            console.log(name_es) //undefined
+        .then(function(saints){
+            console.log(saints[1])
         })
-        .then(function(name_es) { res.render('index', {
+        .then(function(saints) { res.render('index', {
                 days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
                 months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
             date: dates,
-                saints: name_es
+                saints: saints,
             })
         })
 });

@@ -82,8 +82,6 @@ a{
     }
   }
 
-
-
   .day{
     &__body{
       display: flex;
@@ -99,6 +97,7 @@ a{
 
       &--day{
         font-size: 18px;
+        padding-top:10px;
       }
       &--date{
         font-size: 28px;

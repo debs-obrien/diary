@@ -72,7 +72,8 @@ a {
     width: 100%;
     max-width: 100px; }
     .diary .day__body--day {
-      font-size: 18px; }
+      font-size: 18px;
+      padding-top: 10px; }
     .diary .day__body--date {
       font-size: 28px; }
   .diary .day-wrapper {

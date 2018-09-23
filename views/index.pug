@@ -4,8 +4,8 @@ block content
   .wrapper
     .page
       .page__heading
-        span.dates  #{curDate[0].date}-#{curDate[6].date}
-        span.month #{months[curDate[0].months]} #{curDate[0].years}
+        span.dates  #{dates[0].date}-#{dates[6].date}
+        span.month #{months[dates[0].months]} #{dates[0].years}
       .page__body
         .diary
           .diary__body
@@ -27,13 +27,12 @@ block content
               .day-wrapper
                 .day__body
                   .day__body--day= days[i]
-                  .day__body--date= curDate[i].date
+                  .day__body--date= dates[i].date
+                  .day__body--saint
+
                 .details__body
                   .content
                     .time test
-                    .description= saints
-                  .content
-                    .time
                     .description
                   .content
                     .time
@@ -41,6 +40,10 @@ block content
                   .content
                     .time
                     .description
+                  .content
+                    .time Saint:
+                    .description= saints[i]
+
 
                 .circle-wrapper
                   .circle

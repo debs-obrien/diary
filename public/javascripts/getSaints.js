@@ -1,25 +1,20 @@
 module.exports = function saints() {
-    const axios = require("axios");
-
-
-    const getUrl = () => {
-        try {
-            return axios.get('https://api.abalin.net/get/namedays?day=11&month=3')
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    const getUrl = async () => {
+        return await Promise.all(dates.map(date => axios.get(`https://api.abalin.net/get/namedays?day=${date.date}=&month=${date.months + 1}`)));
+    };
 
     const getSaints = async () => {
-        const saints = getUrl()
-            .then(response => {
-                console.log(response)
-                return (response)
+        try {
+            let results = await getUrl();
+            return results.map(result => {
+                let {data: {data: {name_es}}} = result;
+                return name_es
             })
-            .catch(error => {
-                console.log(error)
-            })
-    }
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
 
     return getSaints()
 };

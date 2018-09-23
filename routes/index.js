@@ -6,21 +6,15 @@ const axios = require("axios");
 
 let dates = getDate();
 
-//let day = date[0].date
-//let month = date[0].date
-
 const getUrl = async () => {
-    return await Promise.all( dates.map(date => axios.get(`https://api.abalin.net/get/namedays?day=${date.date}=&month=${date.months+1}`)));
-}
+    return await Promise.all(dates.map(date => axios.get(`https://api.abalin.net/get/namedays?day=${date.date}=&month=${date.months + 1}`)));
+};
 
 const getSaints = async () => {
     try {
-        let results = await getUrl()
-
-        //console.log(results)
+        let results = await getUrl();
         return results.map(result => {
-            let { data: { data: { name_es } } } = result;
-            //console.log(name_es); // prints all names perfectly
+            let {data: {data: {name_es}}} = result;
             return name_es
         })
     }
@@ -30,14 +24,15 @@ const getSaints = async () => {
 };
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     getSaints()
-        .then(function(saints) { res.render('index', {
-            days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-            months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-            dates,
-            saints
-        })
+        .then(function (saints) {
+            res.render('index', {
+                days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
+                months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                dates,
+                saints
+            })
         })
 });
 

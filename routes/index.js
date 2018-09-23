@@ -32,14 +32,11 @@ const getSaints = async () => {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     getSaints()
-        .then(function(saints){
-            console.log(saints[1])
-        })
         .then(function(saints) { res.render('index', {
                 days: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
                 months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-            date: dates,
-                saints: saints,
+                date: dates,
+                saints
             })
         })
 });
